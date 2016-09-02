@@ -102,8 +102,9 @@
     </section>
     <section>
       <section>
-        <img src="assets/ibm-system-360-model-20.jpg" alt="IBM System/360 Model 20" data-src="https://commons.wikimedia.org/wiki/File:DM_IBM_S360.jpg" />
-        <p>Announced 1964</p>
+        <h2>IBM System/360</h2>
+        <img src="assets/ibm-system-360-model-20.jpg" alt="IBM System/360 Model 20" data-credit="https://commons.wikimedia.org/wiki/File:DM_IBM_S360.jpg" />
+        <p class="fragment">Announced 1964</p>
         <aside class="notes">
           <ul>
             <li>System 360 Model 20</li>
@@ -114,7 +115,7 @@
         </aside>
       </section>
       <section>
-        <img src="assets/ibm-2311-memory-unit.jpg" alt="IBM 2311 Memory Unit" data-src="https://commons.wikimedia.org/wiki/File:IBM_2311_memory_unit.JPG" />
+        <img src="assets/ibm-2311-memory-unit.jpg" height="768px" alt="IBM 2311 Memory Unit" data-credit="https://commons.wikimedia.org/wiki/File:IBM_2311_memory_unit.JPG" />
         <aside class="notes">
           <ul>
             <li>Tapes or spinning disk</li>
@@ -122,7 +123,7 @@
         </aside>
       </section>
       <section>
-        <img src="assets/IBM360-67AtUmichWithMikeAlexander.jpg" alt="Man at IBM 360 terminal" data-src="https://commons.wikimedia.org/wiki/File:IBM360-67AtUmichWithMikeAlexander.jpg" />
+        <img src="assets/IBM360-67AtUmichWithMikeAlexander.jpg" width="1024px" alt="Man at IBM 360 terminal" data-credit="https://commons.wikimedia.org/wiki/File:IBM360-67AtUmichWithMikeAlexander.jpg" />
         <aside class="notes">
           <ul>
             <li></li>
@@ -146,13 +147,12 @@
       <section>
         <p class="bigtext">Lives on as IBM zSeries</p>
         <a href="https://en.wikipedia.org/wiki/IBM_System_z">
-          <img src="assets/glowing-ibm_z-nterprise_ec12.jpg" alt="Glowing IBM zSeries computer" data-src="https://en.wikipedia.org/wiki/File:Glowing_IBM_zEnterprise_EC12.JPG" />
+          <img src="assets/glowing-ibm_z-nterprise_ec12.jpg" alt="Glowing IBM zSeries computer" data-credit="https://en.wikipedia.org/wiki/File:Glowing_IBM_zEnterprise_EC12.JPG" />
         </a>
-        IMG: zSeries pic from
         <aside class="notes">
           <ul>
-            <li>Lives on as IBM zSeries</li>
             <li>Still BC for many programs</li>
+            <li>Yes, zSeries runs PHP</li>
           </ul>
         </aside>
       </section>
@@ -161,14 +161,14 @@
         <div>
           <h3>Lead architect</h3>
           <figure>
-            <img src="assets/gene-amdahl.jpg" alt="Gene Amdahl" data-src="https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg" />
+            <img src="assets/gene-amdahl.jpg" alt="Gene Amdahl" height="500px" data-credit="https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg" />
             <figcaption><a href="https://en.wikipedia.org/wiki/Gene_Amdahl">Gene Amdahl</a></figcaption>
           </figure>
         </div>
         <div>
           <h3>Lead manager</h3>
           <figure>
-            <img src="assets/fred-brooks.jpg" alt="Fred Brooks" data-src="https://commons.wikimedia.org/wiki/File:Fred_Brooks.jpg" />
+            <img src="assets/fred-brooks.jpg" alt="Fred Brooks" height="500px" data-credit="https://commons.wikimedia.org/wiki/File:Fred_Brooks.jpg" />
             <figcaption><a href="https://en.wikipedia.org/wiki/Fred_Brooks">Fred Brooks</a></figcaption>
           </figure>
         </div>
@@ -178,16 +178,103 @@
           </ul>
         </aside>
       </section>
+      <section>
+        <h3>"The Mythical Man Month"</h3>
+        <h4>1975</h4>
+        <img src="assets/mythical-man-month.jpg" style="min-width: 300px" alt="The Mythical Man Month" data-credit="https://en.wikipedia.org/wiki/File:Mythical_man-month_%28book_cover%29.jpg" />
+        <h3 class="fragment">Anniversary edition, 1995</h3>
+        <aside class="notes">
+          <ul>
+            <li>Lessons learned, experience and academic study</li>
+            <li>New edition includes "No Silver Bullet", 1986</li>
+            <li>Revisit original claims, still true?</li>
+            <li>Mostly, yes</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h3>It's been another 20 years...</h3>
+        <p class="fragment bigtext">Is it still valid?</p>
+        <aside class="notes">
+          <ul>
+            <li>Different outline from Brooks, same ideas</li>
+          </ul>
+        </aside>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Brooks Law</h2>
+        <blockquote>Adding [people] to a late software project makes it later.</blockquote>
+        <p>&mdash;<em>The Mythical Man-Month</em></p>
+      </section>
+      <section>
+        <h2>Communication is hard</h2>
+        <img src="assets/4-point-communication.svg" alt="4 actors requires 6 communication channels" data-credit="https://en.wikipedia.org/wiki/File:4x2.svg" />
+        <div class="fragment">
+          <img src="assets/communication-explosion-math.svg" alt="(n(n-1))/2" width="300px" data-credit="https://en.wikipedia.org/wiki/Combinatorial_explosion#Communication" />
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>More people = more communication channels</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h2>Tasks are not parallelizable</h2>
+        <img class="fragment" src="assets/dilbert-300-days.gif" alt="300 people can do it in a day" data-credit="http://dilbert.com/strip/2007-09-03" />
+        <p class="fragment">Even for <a href="http://www.garfieldtech.com/blog/moving-metaphor">Unskilled tasks</a> </p>
+        <aside class="notes">
+          <ul>
+            <li>Some resources limited</li>
+            <li>Diff skill levels</li>
+            <li>Some tasks block others</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h2>Adding people incurs cost</h2>
+        <img src="assets/dilbert-add-people.gif" alt="More people takes more time" data-credit="http://dilbert.com/strip/2010-04-29" />
+        <p class="fragment bigtext">(Depending on swim lanes, and how early)</p>
+        <aside class="notes">
+          <ul>
+            <li>Projects have natural number of swim lanes</li>
+            <li>That's max # of developers</li>
+            <li>Developers != people involved</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h2>Is it still true?</h2>
+        <h2 class="fragment">Yup</h2>
+        <aside class="notes">
+          <ul>
+            <li>Any projects that throw people at a problem?</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <img src="assets/druplicon.svg" alt="Drupal" />
+      </section>
+      <section>
+        <img src="assets/drupalcores-contributor-count.jpg" class="screenshot" alt="3715 Contributors to Drupal 8" data-credit="http://www.drupalcores.com/" />
+        <p class="fragment">What should we learn from this?</p>
+      </section>
     </section>
 
     <div style="display: none">
+
+
+      <img src="assets/4-point-communication-mediated.svg" alt="With a mediator, only 4 channels" data-credit="https://en.wikipedia.org/wiki/File:4xn.svg" />.
+
+
 
       Introduction
       System/360
       MMM, 1975
       NSB, 1986
       20th Anniversary Edition, 1995: Still mostly true
-      20 years later again... what's stil true?  Lots.
+      20 years later again... what's still true?  Lots.
 
       Themes:
       - Conceptual integrity (Aristocracy, inequality)
