@@ -18,6 +18,8 @@
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
 
+  <script src="platform-reveal/countup.js"></script>
+
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
@@ -281,7 +283,7 @@
     </section>
     <section>
       <section>
-        <h2>Why are estimates always wrong?</h2>
+        <h3>Why are estimates always wrong?</h3>
       </section>
       <section>
         <h2>Programming Systems Product</h2>
@@ -323,7 +325,7 @@
       <section>
         <p style="font-family: monospace">Effort = Constant * NumInstructions<sup>1.5</sup></p>
         <div class="fragment">
-          <img src="assets/effort-vs-size.jpg" alt="It takes longer per line the more lines you have" />
+          <img src="assets/effort-vs-size.jpg" height="600px" alt="It takes longer per line the more lines you have" />
           <p>&mdash;Nanus and Farr, Page 89</p>
         </div>
         <aside class="notes">
@@ -337,12 +339,12 @@
       <section>
         <table>
           <caption>Productivity in large systems</caption>
-          <tr>Num interactions<th></th> <th>Instructions per person-year</th></tr>
+          <tr><th>Num interactions<th></th> <th>Instructions per person-year</th></tr>
           <tr><td>Very few</td> <td>10,000</td></tr>
           <tr><td>Some</td> <td>5,000</td></tr>
           <tr><td>Many</td> <td>1,500</td></tr>
         </table>
-        <p>Joel Aron, Page 90</p>
+        <p style="margin-top: 1em;">Joel Aron, Page 90</p>
         <p class="fragment">Large: 25 programmers, 30,000 instructions</p>
       </section>
       <section>
@@ -356,8 +358,14 @@
         <aside class="notes">
           <ul>
             <li>Brooks is 2 for 2</li>
+            <li>25 programmers, 30,000 instructions?</li>
           </ul>
         </aside>
+      </section>
+      <section>
+        <p><img src="assets/drupalcores-contributor-count.jpg" class="screenshot" alt="3715 Contributors to Drupal 8" data-credit="http://www.drupalcores.com/" /></p>
+        <p class="fragment">Lines of code in Drupal 8: <span class="fragment" data-countup="1" data-countup-step="1000">237198</span></p>
+        <p class="fragment">What should we learn from this?</p>
       </section>
     </section>
 
