@@ -134,9 +134,9 @@
         <h2>Legacy</h2>
         <ul>
           <li>8-bit byte</li>
-          <li>Byte-addressable memory</li>
-          <li>32-bit words</li>
-          <li>EBCDIC </li>
+          <li class="fragment">Byte-addressable memory</li>
+          <li class="fragment">32-bit words</li>
+          <li class="fragment">EBCDIC </li>
         </ul>
         <aside class="notes">
           <ul>
@@ -198,6 +198,17 @@
         <aside class="notes">
           <ul>
             <li>Different outline from Brooks, same ideas</li>
+            <li>Why are we doing this? ...</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <blockquote>The idea that people knew a thing or two in the '70s is strange to a lot of young programmers.</blockquote>
+        <p>&mdash;<a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a></p>
+        <aside class="notes">
+          <ul>
+            <li>Author, "The Art of Computer Programming"</li>
+            <li>"Father of analysis of algorithms"</li>
           </ul>
         </aside>
       </section>
@@ -233,6 +244,10 @@
         </aside>
       </section>
       <section>
+        <blockquote>[People] and months are interchangeable commodities only when task partitioned with no communication.</blockquote>
+        <p>&mdash;<em>The Mythical Man-Month</em>, page 16</p>
+      </section>
+      <section>
         <h2>Adding people incurs cost</h2>
         <img src="assets/dilbert-add-people.gif" alt="More people takes more time" data-credit="http://dilbert.com/strip/2010-04-29" />
         <p class="fragment bigtext">(Depending on swim lanes, and how early)</p>
@@ -243,6 +258,9 @@
             <li>Developers != people involved</li>
           </ul>
         </aside>
+      </section>
+      <section>
+        <img src="assets/people-vs-months.jpg" alt="Adding people eventually makes it take longer" data-credit="Mythical Man Month, Page 19" />.
       </section>
       <section>
         <h2>Is it still true?</h2>
@@ -261,13 +279,96 @@
         <p class="fragment">What should we learn from this?</p>
       </section>
     </section>
+    <section>
+      <section>
+        <h2>Why are estimates always wrong?</h2>
+      </section>
+      <section>
+        <h2>Programming Systems Product</h2>
+        <p><img src="assets/programming-systems-product.gif" alt="It takes 9x as much work to fully productize a program" data-credit="http://www.generalinformatics.com/3tablesexplainall.htm" /></p>
+        <div class="fragment">
+          <p><q>A substantial bank of test cases, exploring the input range and probing its boundaries, must be prepared, run, and recorded.</q></p>
+          <p>&mdash;Page 6</p>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>3x time to flesh out, test, error handling, etc.</li>
+            <li>3x time to make stable external interfaces</li>
+            <li>"Fast garage products" are just the top-left</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <p class="bigtext">Automated testing was already a thing in 1975.</p>
+        <p class="bigtext">What's your excuse?</p>
+        <aside class="notes">
+          <ul>
+            <li>Not that tests take 3x as long</li>
+            <li>Fixing the bugs tests find takes that long</li>
+          </ul>`
+        </aside>
+      </section>
+      <section>
+        <h2>How fast can you code?</h2>
+        <div class="fragment">
+          <blockquote>Extrapolation of times for the hundred-yard-dash shows that a man can run a mile in under 3 minutes.</blockquote>
+          <p>&mdash;Page 88</p>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>Current best is 3:43.13</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <p style="font-family: monospace">Effort = Constant * NumInstructions<sup>1.5</sup></p>
+        <div class="fragment">
+          <img src="assets/effort-vs-size.jpg" alt="It takes longer per line the more lines you have" />
+          <p>&mdash;Nanus and Farr, Page 89</p>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>True even if no communication!</li>
+            <li>More interaction points internally</li>
+            <li>Limits of human memory</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <table>
+          <caption>Productivity in large systems</caption>
+          <tr>Num interactions<th></th> <th>Instructions per person-year</th></tr>
+          <tr><td>Very few</td> <td>10,000</td></tr>
+          <tr><td>Some</td> <td>5,000</td></tr>
+          <tr><td>Many</td> <td>1,500</td></tr>
+        </table>
+        <p>Joel Aron, Page 90</p>
+        <p class="fragment">Large: 25 programmers, 30,000 instructions</p>
+      </section>
+      <section>
+        <p>But that's for assembly!</p>
+        <p class="fragment">PL/I code follows same curve <span class="fragment">...for statements</span></p>
+        <p class="fragment">More power/statement => more productivity</p>
+      </section>
+      <section>
+        <h2>Is it still true?</h2>
+        <h2 class="fragment">Yup</h2>
+        <aside class="notes">
+          <ul>
+            <li>Brooks is 2 for 2</li>
+          </ul>
+        </aside>
+      </section>
+    </section>
+
+
 
     <div style="display: none">
 
 
       <img src="assets/4-point-communication-mediated.svg" alt="With a mediator, only 4 channels" data-credit="https://en.wikipedia.org/wiki/File:4xn.svg" />.
 
-
+      <img src="assets/growing-bugs.jpg" alt="99 little bugs in the code, take one down, patch it around, 127 bugs in the code." />
 
       Introduction
       System/360
