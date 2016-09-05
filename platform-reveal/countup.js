@@ -1,8 +1,9 @@
 (function() {
   // The countup utility. Any element with a number value and an attribute
   // of "data-countup" will get set to zero and then counted up to its original
-  // value when it is shown.  The value of the data-counter attribute will be
-  // the
+  // value when it is shown.  The value of the data-countup attribute will be the
+  // milliseconds between each step.  The value of the data-countup-step attribute
+  // will be how much to increment the value each step.
 
   var counterIndex = 1;
 
