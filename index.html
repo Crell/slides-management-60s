@@ -60,9 +60,12 @@
       text-decoration: line-through;
     }
 
-    .highlight-text {
-      /*color: #fb6500;*/
-      color: #9fc855;
+    p.bigdeal {
+      font-size: 200%;
+      color: Red;
+      font-style: italic;
+      text-shadow: 3px 3px 10px #990000;
+      display: block;
     }
 
     img.screenshot {
@@ -235,7 +238,9 @@
       </section>
       <section>
         <h2>Tasks are not parallelizable</h2>
-        <img class="fragment" src="assets/dilbert-300-days.gif" alt="300 people can do it in a day" data-credit="http://dilbert.com/strip/2007-09-03" />
+        <a href="http://dilbert.com/strip/2007-09-03">
+          <img class="fragment" src="assets/dilbert-300-days.gif" alt="300 people can do it in a day" data-credit="http://dilbert.com/strip/2007-09-03" />
+        </a>
         <p class="fragment">Even for <a href="http://www.garfieldtech.com/blog/moving-metaphor">Unskilled tasks</a> </p>
         <aside class="notes">
           <ul>
@@ -251,7 +256,9 @@
       </section>
       <section>
         <h2>Adding people incurs cost</h2>
-        <img src="assets/dilbert-add-people.gif" alt="More people takes more time" data-credit="http://dilbert.com/strip/2010-04-29" />
+        <a href="http://dilbert.com/strip/2010-04-29">
+          <img src="assets/dilbert-add-people.gif" alt="More people takes more time" data-credit="http://dilbert.com/strip/2010-04-29" />
+        </a>
         <p class="fragment bigtext">(Depending on swim lanes, and how early)</p>
         <aside class="notes">
           <ul>
@@ -370,16 +377,116 @@
     </section>
     <section>
       <section>
-        <h2>Specs</h2>
+        <h3>Planning and Documentation</h3>
+        <aside class="notes">
+          <ul>
+            <li>These go hand-in-hand.</li>
+            <li>Why up-front-docs?</li>
+          </ul>
+        </aside>
       </section>
-
-      <div style="display:none">
-        The documentation stuff
-        Meeting schedules
-        Top down design
-        Revised: Iterative design, but still top down. Full skeleton first. Not the same as agile Bike->Car
-      </div>
-
+      <section>
+        <blockquote>Only when one writes do the gaps appear and the inconsistencies protrude.
+          The act of writing turns out to require hundreds of mini-decisions, and it is the
+          existence of these that distinguishes clear, exact policies from fuzzy ones.</blockquote>
+        <p>&mdash;Page 111</p>
+        <aside class="notes">
+          <ul>
+            <li>It's like rubber ducking with a word processor</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <blockquote>The crucial task is to get the product defined. Many, many
+          failures concern exactly those aspects that were never quite specified.</blockquote>
+        <p>&mdash;Page 142 via V.A. Vyssotsky of Bell Labs Safeguard Project</p>
+        <aside class="notes">
+          <ul>
+            <li>If you don't know what you're building, you can't built it well.</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <blockquote>The manual, or written specification, is a necessary tool, though not a sufficient one.</blockquote>
+        <p>&mdash;Page 62</p>
+        <aside class="notes">
+          <ul>
+            <li>Formal definition: Precise, but not very readable, misses the "why" of prose.</li>
+            <li>Joining Platform.sh, totally lost on arch.</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h3>Top-down design</h3>
+        <ul>
+          <li class="fragment">Architect first</li>
+          <li class="fragment">Refine top-down to produce modules</li>
+          <li class="fragment">Recurse until you have an architecture</li>
+          <li class="fragment">Implement each module</li>
+          <li class="fragment">Debug/test each module separately</li>
+          <li class="fragment">Inform back up as needed</li>
+        </ul>
+        <p class="fragment">Divide and conquer</p>
+      </section>
+      <section>
+        <blockquote>Plan to throw one away; you will, anyhow.</blockquote>
+        <p>&mdash;Page 116</p>
+        <aside class="notes">
+          <ul>
+            <li>Don't know what you don't know until you build it wrong</li>
+            <li>Never ship v1. See also: Windows 1, 2; MS takes until v3 to be good</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <img src="assets/waterfall-meme.jpg" alt="Don't go developing waterfall" data-credit="http://www.quickmeme.com/meme/36deql" />
+      </section>
+      <section>
+        <h3 class="bigtext">Design top-down, implement iteratively</h3>
+        <h3>1995</h3>
+        <ul>
+          <li class="fragment">End-to-end skeleton</li>
+          <li class="fragment"><strong>A</strong>lways <strong>Be</strong> <strong>C</strong>ompiling</li>
+          <li class="fragment"><em>Grow</em> modules in place</li>
+          <li class="fragment">Throw away modules piecemeal as needed</li>
+        </ul>
+        <h3 class="fragment" style="margin-top: 1em;">Refactoring!</h3>
+        <aside class="notes">
+          <ul>
+            <li>Refactoring is the art of throwing it away a little bit at a time</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h3>Agile?</h3>
+        <img src="assets/agile-mvp.png" width="80%" alt="Agile MVP is wrong" data-credit="https://www.linkedin.com/pulse/minimum-viable-product-mvp-like-redux-michael-j-geiser" />
+        <p class="fragment bigdeal">Wrong!</p>
+        <aside class="notes">
+          <ul>
+            <li>This is throwing it away, twice!</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <div><img src="assets/real-mvp.png" width="80%" alt="How MVP really works" data-credit="http://comunidad.iebschool.com/iebs/marketing-digital/redes-publicitarias-para-promocionar-aplicaciones-moviles/" /></div>
+        <aside class="notes">
+          <ul>
+            <li>Start with a skeleton that supports your end goal</li>
+            <li>Replace doors as needed</li>
+            <li>Decoupled components!</li>
+            <li>NOT most important feature first; foundation first</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
+        <h2>Is it still true?</h2>
+        <h2 class="fragment">Yup</h2>
+        <aside class="notes">
+          <ul>
+            <li>2.5 for 3</li>
+          </ul>
+        </aside>
+      </section>
     </section>
     <section>
       No Silver Bullet stuff here
@@ -401,6 +508,11 @@
 
     <div style="display: none">
 
+      <section>
+        <a href="http://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec">
+          <img src="assets/commitstrip-code-specs.jpg" alt="The only precise spec is code" data-credit="http://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec" />
+        </a>
+      </section>
 
       <img src="assets/4-point-communication-mediated.svg" alt="With a mediator, only 4 channels" data-credit="https://en.wikipedia.org/wiki/File:4xn.svg" />.
 
