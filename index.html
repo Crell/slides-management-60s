@@ -72,6 +72,11 @@
       border-radius: 5px;
       width: 900px;
     }
+
+    blockquote em {
+      color: Green;
+      font-weight: bold !important;
+    }
   </style>
 
 </head>
@@ -85,7 +90,7 @@
   <div class="slides">
 
     <section>
-      <h1>Software Management Lessons from the 1960s</h1>
+      <h2>Software Management Lessons from the 1960s</h2>
       <p>
         <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
       </p>
@@ -99,8 +104,9 @@
       <div>
         <ul style="text-wrap: none">
           <li>D.R.I.E.S., <a href="http://www.platform.sh/">Platform.sh</a></li>
+          <li style="margin-top: 1em;">10 years consulting with Palantir.net</li>
           <li style="margin-top: 1em;">Drupal 8 Web Services Lead</li>
-          <li style="margin-top: 1em;">Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
+          <!--<li style="margin-top: 1em;">Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>-->
           <li style="margin-top: 1em;"><code>implements Huggable</code></li>
         </ul>
       </div>
@@ -138,7 +144,7 @@
       <section>
         <h2>Legacy</h2>
         <ul>
-          <li>8-bit byte</li>
+          <li class="fragment">8-bit byte</li>
           <li class="fragment">Byte-addressable memory</li>
           <li class="fragment">32-bit words</li>
           <li class="fragment">EBCDIC </li>
@@ -211,8 +217,10 @@
     <section>
       <section>
         <h2>Brooks Law</h2>
-        <blockquote>Adding [people] to a late software project makes it later.</blockquote>
-        <p>&mdash;<em>The Mythical Man-Month</em></p>
+        <div class="fragment">
+          <blockquote>Adding [people] to a late software project makes it later.</blockquote>
+          <p>&mdash;<em>The Mythical Man-Month</em></p>
+        </div>
       </section>
       <section>
         <h2>Communication is hard</h2>
@@ -264,6 +272,12 @@
       <section>
         <h2>Is it still true?</h2>
         <h2 class="fragment">Yup</h2>
+      </section>
+      <section>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/Crell">@Crell</a> Get a second speaker on stage, and give both halves of the talk simultaneously. You&#39;ll be able to fit in 2x the material.</p>&mdash; Greg Anderson (@greg_1_anderson) <a href="https://twitter.com/greg_1_anderson/status/773607089079930880">September 7, 2016</a></blockquote>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
         <aside class="notes">
           <ul>
             <li>Any projects that throw people at a problem?</li>
@@ -336,7 +350,7 @@
       <section>
         <table>
           <caption>Productivity in large systems</caption>
-          <tr><th>Num interactions<th></th> <th>Instructions per person-year</th></tr>
+          <tr><th>Num interactions</th> <th>Instructions per person-year</th></tr>
           <tr><td>Very few</td> <td>10,000</td></tr>
           <tr><td>Some</td> <td>5,000</td></tr>
           <tr><td>Many</td> <td>1,500</td></tr>
@@ -361,7 +375,12 @@
       </section>
       <section>
         <p><img src="assets/drupalcores-contributor-count.jpg" class="screenshot" alt="3715 Contributors to Drupal 8" data-credit="http://www.drupalcores.com/" /></p>
-        <p class="fragment">Lines of code in Drupal 8: <span class="fragment" data-countup="1" data-countup-step="1000">237198</span></p>
+        <div class="fragment">
+          <p>Lines of code in Drupal 8: <span class="fragment" data-countup="1" data-countup-step="1000">237198</span></p>
+          <p>Source: <a href="https://infogr.am/Drupal-Code-Base">https://infogr.am/Drupal-Code-Base</a></p>
+        </div>
+
+
         <p class="fragment">What should we learn from this?</p>
       </section>
     </section>
@@ -436,7 +455,7 @@
         <h3>1995</h3>
         <ul>
           <li class="fragment">End-to-end skeleton</li>
-          <li class="fragment"><strong>A</strong>lways <strong>Be</strong> <strong>C</strong>ompiling</li>
+          <li class="fragment"><strong>A</strong>lways <strong>B</strong>e <strong>C</strong>ompiling</li>
           <li class="fragment"><em>Grow</em> modules in place</li>
           <li class="fragment">Throw away modules piecemeal as needed</li>
         </ul>
@@ -446,13 +465,6 @@
             <li>Refactoring is the art of throwing it away a little bit at a time</li>
           </ul>
         </aside>
-      </section>
-      <section>
-        <blockquote>Harlan Mills proposed... the system should be first made to run,
-          even though it does nothing useful except call the proper set of dummy
-          subprograms. Then, bit by bit, it is fleshed out, with the subprograms
-          in turn begin developed into actions or calls to empty stubs in the level below</blockquote>
-        <p>&mdash;Page 201</p>
       </section>
       <section>
         <blockquote>The approach necessitates top-down design, for it is a top-down growing of the software.</blockquote>
@@ -552,7 +564,7 @@
         </aside>
       </section>
       <section>
-        <blockquote>The most radical possible solution for constructing software is not to construct it at all.</blockquote>
+        <blockquote>The most radical possible solution for constructing software is not to<br />construct it at all.</blockquote>
         <p>&mdash;Page 197</p>
         <aside class="notes">
           <ul>
@@ -569,14 +581,6 @@
       <section>
         <p>The way to be more productive is to write less code</p>
         <p style="margin-top: 1em;" class="fragment">The way to be more productive is to reuse more code</p>
-      </section>
-      <section>
-        <blockquote>If a software engineer, a potential consumer of standardized software components,
-          perceives it to be more expensive to find a component that meets his needs, and so verify,
-          than to write one anew, a new, duplicative component will be written. Notice we said perceives
-          above. It doesn't matter what the true cost of reconstruction is.</blockquote>
-        <p>&mdash; Van Snyder, JPL<br />as quoted in "'No Silver Bullet', Refired", 1995.</p>
-        <p style="margin-top: 1em;" class="fragment"><q>Sharing must be easy or it won't happen</q></p>
       </section>
       <section>
         <h3>Growing great designers</h3>
@@ -602,10 +606,10 @@
       <section>
         <h2>Mentoring</h2>
         <ul>
-          <li>Identify candidates early (may not be most experienced)</li>
-          <li>Assign a career mentor</li>
-          <li>Maintain a career development plan: apprenticeships, advanced formal education, and short courses, solo work</li>
-          <li>Encourage collaboration with other designers</li>
+          <li class="fragment">Identify candidates early (may not be most experienced)</li>
+          <li class="fragment">Assign a career mentor</li>
+          <li class="fragment">apprenticeships, formal education, and short courses, solo work</li>
+          <li class="fragment">Encourage collaboration with other designers</li>
         </ul>
         <aside class="notes">
           <ul>
@@ -745,19 +749,25 @@
       <h3>How big is big?</h3>
       <div class="fragment">
         <blockquote>After teaching a software engineering laboratory more than 20 times,
-          I came to insist that student teams as small as four people choose a
+          I came to insist that student <em>teams as small as four people</em> choose a
           manager and a separate architect.</blockquote>
         <p>&mdash;Page 257</p>
       </div>
+      <aside class="notes">
+        <ul>
+          <li>Either can be boss, as long as one is.</li>
+        </ul>
+      </aside>
     </section>
     <section>
       <h3>What should we learn from this?</h3>
       <ul>
-        <li class="fragment">Software is hard because it's a creative field</li>
+        <li class="fragment">Software construction is a creative process</li>
         <li class="fragment">Divide and conquer</li>
         <li class="fragment">Shareable programming systems products (Open Source)</li>
         <li class="fragment">Decouple libraries from framework</li>
-        <li class="fragment">Top-down design, top-down collaboration</li>
+        <li class="fragment">Top-down design</li>
+        <li class="fragment">Empower architect to make decisions</li>
       </ul>
     </section>
     <section>
