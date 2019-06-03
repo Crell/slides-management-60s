@@ -1,107 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>Software Management Lessons from the 1960s</title>
-  <meta name="author" content="Larry Garfield">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="css/reveal.css">
-  <link rel="stylesheet" href="platform-reveal/platform-theme/assets/css/styles.css" id="theme">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>PSR-14: A Major Event in PHP</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/reveal.css" />
+
+  <link rel="stylesheet" href="platform/platformsh.css" />
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'platform-theme/assets/css/print/pdf.css' : 'platform-theme/assets/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
 
-  <script src="platform-reveal/countup.js"></script>
-
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-
-  <style type="text/css">
-
-    img.graphic {
+  <style>
+    .working-group-list img {
+      width: 200px;
     }
 
-    ul.inline {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      text-align: center;
-    }
-
-    ul.inline li {
-      display: inline;
-    }
-
-    /*overwrites a default style that
-    vertically un-centered slides */
-    .reveal .slides>section,
-    .reveal .slides>section>section {
-      padding: 0;
-    }
-
-    .reveal h2 + p.bigtext,
-    .reveal p + p {
-      margin-top: 1em;
-    }
-
-    .reveal #final p + p {
-      margin-top: 0;
-    }
-
-    .struck {
-      text-decoration: line-through;
-    }
-
-    p.bigdeal {
-      font-size: 200%;
-      color: Red;
+    .stronger {
+      font-weight: bold;
       font-style: italic;
-      text-shadow: 3px 3px 10px #990000;
-      display: block;
     }
-
-    img.screenshot {
-      border-radius: 5px;
-      width: 900px;
-    }
-
-    blockquote em {
-      color: Green;
-      font-weight: bold !important;
-    }
-
   </style>
 
 </head>
-<!-- Change body class to "dark" if you prefer a dark theme, or "light" if you'd rather have a light theme-->
-<body class="light">
+<body class="skin-blue">
 <div class="reveal">
-  <div class="logo">
-    <p>Platform.sh</p>
-  </div>
-  <!-- Any section element inside of this container is displayed as a slide -->
+  <footer>
+    <img class="logo" src="platform/logos/platformsh-logo-black.svg" alt="Platform.sh" />
+    <span class="name">@Crell</span>
+  </footer>
   <div class="slides">
 
     <section>
-      <h2>Software Management Lessons from the 1960s</h2>
-      <p>
-        <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
-      </p>
+      <h2>Software Management Lessons<br />from the 1960s</h2>
     </section>
-    <section class="l-2up">
-      <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
-      <div>
+    <section id="presenter">
+      <h2>Larry Garfield</h2>
+      <h2><a href="https://twitter.com/Crell">@Crell</a></h2>
+      <div class="layout-col vcentered">
         <img src="assets/larry-olaf-hug.jpg" alt="Larry implements Huggable" style="width: 350px; margin: 0" />
-      </div>
-      <div>
         <ul style="text-wrap: none">
           <li>Director of DX, <a href="http://www.platform.sh/">Platform.sh</a></li>
           <li style="margin-top: 1em;">PHP-FIG Core Committee</li>
@@ -145,7 +94,7 @@
         </aside>
       </section>
       <section>
-        <p class="bigtext">Lives on as IBM zSeries</p>
+        <p class="oversize">Lives on as IBM zSeries</p>
         <a href="https://en.wikipedia.org/wiki/IBM_System_z">
           <img src="assets/glowing-ibm_z-nterprise_ec12.jpg" height="600px" alt="Glowing IBM zSeries computer" data-credit="https://en.wikipedia.org/wiki/File:Glowing_IBM_zEnterprise_EC12.JPG" />
         </a>
@@ -156,21 +105,23 @@
           </ul>
         </aside>
       </section>
-      <section class="l-2up">
+      <section>
         <h2>Lead team</h2>
-        <div style="text-align: center;">
-          <h3>Lead architect</h3>
-          <figure>
-            <img src="assets/gene-amdahl.jpg" alt="Gene Amdahl" height="450px" data-credit="https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg" />
-            <figcaption><a href="https://en.wikipedia.org/wiki/Gene_Amdahl">Gene Amdahl</a></figcaption>
-          </figure>
-        </div>
-        <div style="text-align: center;">
-          <h3>Lead manager</h3>
-          <figure>
-            <img src="assets/fred-brooks.jpg" alt="Fred Brooks" height="450px" data-credit="https://commons.wikimedia.org/wiki/File:Fred_Brooks.jpg" />
-            <figcaption><a href="https://en.wikipedia.org/wiki/Fred_Brooks">Fred Brooks</a></figcaption>
-          </figure>
+        <div class="layout-col equal-width">
+          <div>
+            <h3>Lead architect</h3>
+            <figure>
+              <img src="assets/gene-amdahl.jpg" alt="Gene Amdahl" height="450px" data-credit="https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg" />
+              <figcaption><a href="https://en.wikipedia.org/wiki/Gene_Amdahl">Gene Amdahl</a></figcaption>
+            </figure>
+          </div>
+          <div>
+            <h3>Lead manager</h3>
+            <figure>
+              <img src="assets/fred-brooks.jpg" alt="Fred Brooks" height="450px" data-credit="https://commons.wikimedia.org/wiki/File:Fred_Brooks.jpg" />
+              <figcaption><a href="https://en.wikipedia.org/wiki/Fred_Brooks">Fred Brooks</a></figcaption>
+            </figure>
+          </div>
         </div>
         <aside class="notes">
           <ul>
@@ -193,12 +144,13 @@
         </aside>
       </section>
       <section>
-        <h3>It's been another 20 years...</h3>
-        <p class="fragment bigtext">Is it still valid?</p>
+        <h3>It's been another 20(-ish) years...</h3>
+        <p class="fragment oversize">Is it still valid?</p>
         <aside class="notes">
           <ul>
             <li>Different outline from Brooks, same ideas</li>
             <li>Not valid: "man" month</li>
+            <li>Picking on OSS projects, but not them specifically</li>
           </ul>
         </aside>
       </section>
@@ -206,10 +158,10 @@
     <section>
       <section>
         <h2>Brooks Law</h2>
-        <div class="fragment">
+        <aside class="quote fragment">
           <blockquote>Adding [people] to a late software project makes it later.</blockquote>
-          <p>&mdash;<em>The Mythical Man-Month</em></p>
-        </div>
+          <cite><em>The Mythical Man-Month</em></cite>
+        </aside>
       </section>
       <section>
         <h2>Communication is hard</h2>
@@ -238,15 +190,19 @@
         </aside>
       </section>
       <section>
-        <blockquote>[People] and months are interchangeable commodities only when a task can be partitioned among many workers with no communication among them.</blockquote>
-        <p>&mdash;<em>The Mythical Man-Month</em>, page 16</p>
+        <aside class="quote">
+          <blockquote>[People] and months are interchangeable commodities only when a task can be partitioned among many workers with no communication among them.</blockquote>
+          <cite><em>The Mythical Man-Month</em>, page 16</cite>
+        </aside>
       </section>
       <section>
         <h2>Adding people incurs cost</h2>
-        <a href="http://dilbert.com/strip/2010-04-29">
-          <img src="assets/dilbert-add-people.gif" alt="More people takes more time" data-credit="http://dilbert.com/strip/2010-04-29" />
-        </a>
-        <p class="fragment bigtext">(Depending on swim lanes,<br />and how early)</p>
+        <div>
+          <a href="http://dilbert.com/strip/2010-04-29">
+            <img src="assets/dilbert-add-people.gif" alt="More people takes more time" data-credit="http://dilbert.com/strip/2010-04-29" />
+          </a>
+        </div>
+        <p class="fragment oversize">(Depending on swim lanes,<br />and how early)</p>
         <aside class="notes">
           <ul>
             <li>Projects have natural number of swim lanes</li>
@@ -257,8 +213,10 @@
       </section>
       <section>
         <h2><a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl's law</a></h2>
-        <div style="float: left; width: 33%"><img src="assets/amdahls-law-math.svg" width="100%" alt="Amdahl's Law" data-credit="https://en.wikipedia.org/wiki/Amdahl%27s_law" /></div>
-        <div><img src="assets/amdahls-law-graph.svg" alt="Graph of Amdahl's Law" data-credit="https://en.wikipedia.org/wiki/Amdahl%27s_law#/media/File:AmdahlsLaw.svg" /></div>
+        <div class="layout-col">
+          <div style="width: 33%"><img src="assets/amdahls-law-math.svg" width="100%" alt="Amdahl's Law" data-credit="https://en.wikipedia.org/wiki/Amdahl%27s_law" /></div>
+          <div><img src="assets/amdahls-law-graph.svg" alt="Graph of Amdahl's Law" data-credit="https://en.wikipedia.org/wiki/Amdahl%27s_law#/media/File:AmdahlsLaw.svg" /></div>
+        </div>
         <aside class="notes">
           <ul>
             <li>"gives the theoretical speedup in latency of the execution of a task at fixed workload that can be expected of a system whose resources are improved."</li>
@@ -313,8 +271,8 @@
         </aside>
       </section>
       <section>
-        <p class="bigtext">Automated testing was already a thing in 1975.</p>
-        <p class="bigtext">What's your excuse?</p>
+        <p class="oversize">Automated testing was already a thing in 1975.</p>
+        <p class="oversize">What's your excuse?</p>
         <aside class="notes">
           <ul>
             <li>Not that tests take 3x as long</li>
@@ -360,7 +318,7 @@
         <p class="fragment">Large: 25 programmers, 30,000 instructions</p>
       </section>
       <section>
-        <p>But that's for assembly!</p>
+        <p class="oversize">But that's for assembly!</p>
         <p class="fragment">PL/I code follows same curve <span class="fragment">...for statements</span></p>
         <p class="fragment">More power/statement => more productivity</p>
       </section>
@@ -393,10 +351,12 @@
         </aside>
       </section>
       <section>
-        <blockquote>Only when one writes do the gaps appear and the inconsistencies protrude.
-          The act of writing turns out to require hundreds of mini-decisions, and it is the
-          existence of these that distinguishes clear, exact policies from fuzzy ones.</blockquote>
-        <p>&mdash;Page 111</p>
+        <aside class="quote">
+          <blockquote>Only when one writes do the gaps appear and the inconsistencies protrude.
+            The act of writing turns out to require hundreds of mini-decisions, and it is the
+            existence of these that distinguishes clear, exact policies from fuzzy ones.</blockquote>
+          <cite>Page 111</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>It's like rubber ducking with a word processor</li>
@@ -404,9 +364,11 @@
         </aside>
       </section>
       <section>
-        <blockquote>The crucial task is to get the product defined. Many, many
-          failures concern exactly those aspects that were never quite specified.</blockquote>
-        <p>&mdash;Page 142 via V.A. Vyssotsky of Bell Labs Safeguard Project</p>
+        <aside class="quote">
+          <blockquote>The crucial task is to get the product defined. Many, many
+            failures concern exactly those aspects that were never quite specified.</blockquote>
+          <cite>Page 142 via V.A. Vyssotsky of Bell Labs Safeguard Project</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>If you don't know what you're building, you can't built it well.</li>
@@ -414,8 +376,10 @@
         </aside>
       </section>
       <section>
-        <blockquote>The manual, or written specification, is a necessary tool, though not a sufficient one.</blockquote>
-        <p>&mdash;Page 62</p>
+        <aside class="quote">
+          <blockquote>The manual, or written specification, is a necessary tool, though not a sufficient one.</blockquote>
+          <cite>Page 62</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Formal definition (Code): Precise, but not very readable</li>
@@ -436,8 +400,10 @@
         <p class="fragment">Divide and conquer</p>
       </section>
       <section>
-        <blockquote>Plan to throw one away; you will, anyhow.</blockquote>
-        <p>&mdash;Page 116</p>
+        <aside class="quote">
+          <blockquote>Plan to throw one away; you will, anyhow.</blockquote>
+          <cite>Page 116</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Don't know what you don't know until you build it wrong</li>
@@ -446,10 +412,10 @@
         </aside>
       </section>
       <section>
-        <img src="assets/waterfall-meme.jpg" width="90%" alt="Don't go developing waterfall" data-credit="http://www.quickmeme.com/meme/36deql" />
+        <img src="assets/waterfall-meme.jpg" class="meme" width="90%" alt="Don't go developing waterfall" data-credit="http://www.quickmeme.com/meme/36deql" />
       </section>
       <section>
-        <h3 class="bigtext">Design top-down, implement iteratively</h3>
+        <h3 class="oversize">Design top-down, implement iteratively</h3>
         <h3>1995</h3>
         <ul>
           <li class="fragment">End-to-end skeleton</li>
@@ -466,13 +432,17 @@
         </aside>
       </section>
       <section>
-        <blockquote>The approach necessitates top-down design, for it is a top-down growing of the software.</blockquote>
-        <p>&mdash;Page 201</p>
+        <aside class="quote">
+          <blockquote>The approach necessitates top-down design, for it is a top-down growing of the software.</blockquote>
+          <cite>Page 201</cite>
+        </aside>
       </section>
       <section>
-        <blockquote>Common sense, if not common practice, dictates that one should
-          begin system debugging only after the pieces seem to work.</blockquote>
-        <p>&mdash;Page 147</p>
+        <aside class="quote">
+          <blockquote>Common sense, if not common practice, dictates that one should
+            begin system debugging only after the pieces seem to work.</blockquote>
+          <cite>Page 147</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Architect top-down</li>
@@ -493,7 +463,7 @@
       <section>
         <h3>Agile?</h3>
         <div><img src="assets/real-mvp.png" width="80%" alt="How MVP really works" data-credit="http://comunidad.iebschool.com/iebs/marketing-digital/redes-publicitarias-para-promocionar-aplicaciones-moviles/" /></div>
-        <p style="font-size: small;">(Credit: <a href="http://comunidad.iebschool.com/iebs/marketing-digital/redes-publicitarias-para-promocionar-aplicaciones-moviles/">http://comunidad.iebschool.com/</a>)</p>
+        <p class="credit">(Credit: <a href="http://comunidad.iebschool.com/iebs/marketing-digital/redes-publicitarias-para-promocionar-aplicaciones-moviles/">http://comunidad.iebschool.com/</a>)</p>
         <aside class="notes">
           <ul>
             <li>Start with a skeleton that supports your end goal</li>
@@ -518,21 +488,25 @@
         <h2>"No Silver Bullet"</h2>
         <h3>1986</h3>
       </section>
-      <section class="l-2up">
-        <div style="text-align: center">
-          <h3>Essential Complexity</h3>
-          <p><q>The problem space is hard</q></p>
-        </div>
-        <div style="text-align: center">
-          <h3>Accidental Complexity</h3>
-          <p><q>The tools are hard to use</q></p>
+      <section>
+        <div class="layout-col">
+          <div>
+            <h3>Essential Complexity</h3>
+            <p><q>The problem space is hard</q></p>
+          </div>
+          <div>
+            <h3>Accidental Complexity</h3>
+            <p><q>The tools are hard to use</q></p>
+          </div>
         </div>
       </section>
       <section>
-        <blockquote>I believe the hard part of building software to be the specification,
-          design, and testing of this conceptual construct, not the labor of representing
-          it and testing the fidelity of the representation.</blockquote>
-        <p>&mdash;Page 182</p>
+        <aside class="quote">
+          <blockquote>I believe the hard part of building software to be the specification,
+            design, and testing of this conceptual construct, not the labor of representing
+            it and testing the fidelity of the representation.</blockquote>
+          <cite>Page 182</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Execute by walking down hall to computer room</li>
@@ -541,10 +515,12 @@
         </aside>
       </section>
       <section>
-        <blockquote>There is no single development... which by itself promises
-          even one order of magnitude improvement in productivity, in reliablity,
-          in simplicity</blockquote>
-        <p>&mdash;Page 183</p>
+        <aside class="quote">
+          <blockquote>There is no single development... which by itself promises
+            even one order of magnitude improvement in productivity, in reliablity,
+            in simplicity</blockquote>
+          <cite>Page 183</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>There is room for improvement, but not like we once saw</li>
@@ -565,8 +541,10 @@
         </aside>
       </section>
       <section>
-        <blockquote>The most radical possible solution for constructing software is not to<br />construct it at all.</blockquote>
-        <p>&mdash;Page 197</p>
+        <aside class="quote">
+          <blockquote>The most radical possible solution for constructing software is not to<br />construct it at all.</blockquote>
+          <cite>Page 197</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Hardware $20 million, $50k custom software cheap</li>
@@ -584,21 +562,21 @@
         <p style="margin-top: 1em;" class="fragment">The way to be more productive is to reuse more code</p>
       </section>
       <section>
-        <h3>Growing great designers</h3>
-        <div>
+        <h2>Growing great designers</h2>
+        <aside class="quote fragment">
           <blockquote>Software construction is a creative process.</blockquote>
           <p>&mdash;Page 202</p>
-        </div>
+        </aside>
       </section>
       <section>
-        <h3>Growing great designers</h3>
-        <div>
+        <h2>Growing great designers</h2>
+        <aside class="quote">
           <blockquote>Study after study shows that the very best designers produce
             structures that are faster, smaller, simpler, cleaner, and produced
             with less effort. The differences between the great and the average
             approach an order of magnitude.</blockquote>
-          <p>&mdash;Page 202</p>
-        </div>
+          <cite>Page 202</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Software architecture more like graphic design than engineering</li>
@@ -637,9 +615,11 @@
         <h2>Conceptual integrity</h2>
       </section>
       <section>
-        <blockquote>The conceptual integrity of the product, as perceived by the
-          user, is the most important factor in ease of use.</blockquote>
-        <p>&mdash;Page 255</p>
+        <aside class="quote">
+          <blockquote>The conceptual integrity of the product, as perceived by the
+            user, is the most important factor in ease of use.</blockquote>
+          <cite>Page 255</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>One mental model</li>
@@ -657,12 +637,16 @@
         </aside>
       </section>
       <section>
-        <blockquote>Simplicity and straightforwardness proceed from conceptual integrity.</blockquote>
-        <p>&mdash;Page 44</p>
+        <aside class="quote">
+          <blockquote>Simplicity and straightforwardness proceed from conceptual integrity.</blockquote>
+          <cite>Page 44</cite>
+        </aside>
       </section>
       <section>
-        <blockquote>Conceptual integrity is <em>the</em> most important consideration in system design.</blockquote>
-        <p>&mdash;Page 42</p>
+        <aside class="quote">
+          <blockquote>Conceptual integrity is <em>the</em> most important consideration in system design.</blockquote>
+          <cite>Page 42</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Better to have consistent design than more features</li>
@@ -671,9 +655,11 @@
         </aside>
       </section>
       <section>
-        <blockquote>...conceptual integrity of the product not only makes it
-          easier to use, it also makes it easier to build and less subject to bugs.</blockquote>
-        <p>&mdash;Page 142</p>
+        <aside class="quote">
+          <blockquote>...conceptual integrity of the product not only makes it
+            easier to use, it also makes it easier to build and less subject to bugs.</blockquote>
+          <cite>Page 142</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>"Ubiquitous language"</li>
@@ -682,11 +668,11 @@
       </section>
       <section>
         <h2>How?</h2>
-        <p class="fragment bigtext">Smart division of labor</p>
-        <div class="fragment">
+        <p class="fragment oversize">Smart division of labor</p>
+        <aside class="quote fragment">
           <blockquote>The design must proceed from one mind, or a very small number of agreeing, resonant minds.</blockquote>
-          <p>&mdash;Page 44</p>
-        </div>
+          <cite>Page 44</cite>
+        </aside>
         <aside class="notes">
           <ul>
             <li>Surgical team: Builder does nothing but build, has big staff to do everything else</li>
@@ -696,15 +682,17 @@
         </aside>
       </section>
       <section>
-        <h3>Architect/designer</h3>
-        <blockquote>The architect&hellip; is the user's agent. It is [their] job to
-          bring professional and technical knowledge to bear in the unalloyed
-          interest of the user, as opposed to the interest of the salesman, the fabricator, etc.</blockquote>
-        <p>&mdash;Page 45</p>
+        <h2>Architect/designer</h2>
+        <aside class="quote">
+          <blockquote>The architect&hellip; is the user's agent. It is [their] job to
+            bring professional and technical knowledge to bear in the unalloyed
+            interest of the user, as opposed to the interest of the salesman, the fabricator, etc.</blockquote>
+          <cite>Page 45</cite>
+        </aside>
       </section>
       <section>
-        <p class="bigtext"><q>But that's Cathedral design; that's aristocracy!</q></p>
-        <p class="fragment bigtext">Cathedrals are still standing...</p>
+        <p class="oversize"><q>But that's Cathedral design; that's aristocracy!</q></p>
+        <p class="fragment oversize">Cathedrals are still standing...</p>
       </section>
       <section>
         <h2>See also</h2>
@@ -715,14 +703,16 @@
           <li class="fragment">HTTP / Browsers</li>
         </ul>
       </section>
-      <section class="l-2up">
-        <div style="text-align: center">
-          <h3>Architect</h3>
-          <p>Designs watch dial and hands</p>
-        </div>
-        <div style="text-align: center">
-          <h3>Implementer</h3>
-          <p>Builds gears and bells</p>
+      <section>
+        <div class="layout-col equal-width vcentered">
+          <div>
+            <h3>Architect</h3>
+            <p>Designs watch dial and hands</p>
+          </div>
+          <div>
+            <h3>Implementer</h3>
+            <p>Builds gears and bells</p>
+          </div>
         </div>
         <aside class="notes">
           <ul>
@@ -732,10 +722,12 @@
         </aside>
       </section>
       <section>
-        <blockquote>The architect must always be prepared to show <em>an</em>
-          implementation for any feature he describes, but he must not attempt
-          to dictate <em>the</em> implementation.</blockquote>
-        <p>&mdash;Page 62</p>
+        <aside class="quote">
+          <blockquote>The architect must always be prepared to show <em>an</em>
+            implementation for any feature he describes, but he must not attempt
+            to dictate <em>the</em> implementation.</blockquote>
+          <cite>Page 62</cite>
+        </aside>
         <p class="fragment">Ongoing cooperative effort, high communication</p>
         <aside class="notes">
           <ul>
@@ -746,27 +738,18 @@
         </aside>
       </section>
       <section>
-        <img src="assets/php-logo.png" alt="PHP" />
+        <div><img src="assets/php-logo.png" style="width: 100%" alt="PHP" /></div>
         <p class="fragment">What should we learn from this?</p>
       </section>
-      <!--
-      <section>
-        <img src="assets/druplicon.svg" width="500px" alt="Drupal" />
-      </section>
-      <section>
-        <img src="assets/drupal-8-logo.png" width="500px" alt="Drupal 8" />
-        <p class="fragment">What should we learn from this?</p>
-      </section>
-      -->
     </section>
     <section>
       <h3>How big is big?</h3>
-      <div class="fragment">
+      <aside class="quote fragment">
         <blockquote>After teaching a software engineering laboratory more than 20 times,
           I came to insist that student <em>teams as small as four people</em> choose a
           manager and a separate architect.</blockquote>
-        <p>&mdash;Page 257</p>
-      </div>
+        <cite>mdash;Page 257</cite>
+      </aside>
       <aside class="notes">
         <ul>
           <li>Either can be boss, as long as one is.</li>
@@ -785,8 +768,10 @@
       </ul>
     </section>
     <section>
-      <blockquote>The idea that people knew a thing or two in the '70s is strange to a lot of young programmers.</blockquote>
-      <p>&mdash;<a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a></p>
+      <aside class="quote">
+        <blockquote>The idea that people knew a thing or two in the '70s is strange to a lot of young programmers.</blockquote>
+        <cite><a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a></cite>
+      </aside>
       <aside class="notes">
         <ul>
           <li>Author, "The Art of Computer Programming"</li>
@@ -807,33 +792,29 @@
 
 </div>
 
-<script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
 
 <script>
-
-  // Full list of configuration options available at:
-  // https://github.com/hakimel/reveal.js#configuration
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
   Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: true,
-
-    transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-    // Optional reveal.js plugins
+    hash: true,
+    controlsTutorial: false,
     dependencies: [
-      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: 'plugin/zoom-js/zoom.js', async: true },
-      { src: 'plugin/notes/notes.js', async: true }
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true }
     ]
   });
-
 </script>
+
+<!-- Custom Reveal extension scripts. -->
+<script src="platform/classer.js"></script>
+<script src="platform/countup.js"></script>
+<script src="platform/usecase.js"></script>
+
 
 </body>
 </html>
