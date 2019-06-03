@@ -6,7 +6,7 @@
 /* Enable or disable for debugging purposes
 to show where the edge of the slide region is. */
 .reveal .slides {
-  border: 1px dotted red;
+  /*border: 1px dotted red;*/
 }
 
 :root {
