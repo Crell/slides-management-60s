@@ -36,7 +36,7 @@ body.skin-gray {
   --color-inline-code: var(--brand-color-neural-black);
   --color-link: var(--brand-color-primary-blue);
   --color-quote-mark: var(--brand-color-primary-pink);
-  --color-emphasis: var(--brand-color-accent-red);
+  --color-emphasis: var(--brand-color-primary-blue);
 }
 
 body.skin-blue {
@@ -49,7 +49,7 @@ body.skin-blue {
   --color-link: var(--brand-color-primary-blue);
   /* @todo Pink on blue is terrible but I'm not sure what else isn't worse. */
   --color-quote-mark: var(--brand-color-primary-pink);
-  --color-emphasis: var(--brand-color-primary-pink);
+  --color-emphasis: var(--brand-color-primary-blue);
 }
 
 body {
@@ -126,9 +126,15 @@ body {
   margin-bottom: 0.8em;
   line-height: 1.3em;
 }
+
+.reveal .slides li {
+  margin-bottom: 0.3em;
+}
+
 .reveal .slides pre code div {
   margin: inherit;
 }
+
 .reveal ol,
 .reveal dl,
 .reveal ul {
@@ -298,6 +304,10 @@ aside {
   margin-right: auto;
   /* This is based on a default slide height in Reveal of 700px. */
   max-height: 550px;
+}
+
+.reveal .slides pre > code div {
+  line-height: 1.4em;
 }
 
 .reveal pre > div {
