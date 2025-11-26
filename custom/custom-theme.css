@@ -270,34 +270,42 @@ aside {
 
 .reveal pre code.font--8 {
   font-size: 8px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--12 {
   font-size: 12px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--14 {
   font-size: 14px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--16 {
   font-size: 16px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--18 {
   font-size: 18px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--20 {
   font-size: 20px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--24 {
   font-size: 24px;
+  line-height: 1em;
 }
 
 .reveal pre code.font--30 {
   font-size: 30px;
+  line-height: 1em;
 }
 
 .reveal code {
